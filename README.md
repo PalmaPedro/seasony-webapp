@@ -10,15 +10,24 @@ This application was developed using the 'MERN' (MongoDB, Express, React and Nod
 
 Two resources were implemented: devices and tasks
 
-A user may create, update, delete and read 'tasks' and 'devices'. A user may then select a specific device, assign a task and send it. 
+A user may create, update, delete and read 'tasks' and 'devices'. A user may then select a specific device, assign a task and send it to the selected device.
 
 ## Usage
+
+To run the application make sure you have installed:
+- nodejs -  https://nodejs.org/en/download/  (includes npm - Node package manager)
+- mongodb - https://docs.mongodb.com/manual/installation/#mongodb-community-edition-installation-tutorials
+
+### Clone repo
+```
+git clone <repo url here>
+```
 
 You can update values in the config.env file, if not, server will run at port 5000 and database will run 
 at localhost with the name 'seasonydb' (please make sure mongodb is installed in your machine and create a database
 with a matching name)
 
-If you wish to run the backend only, a collection of endpoints are included that can be imported to Postman for testing http requests.
+If you wish to run the backend only, a collection of endpoints are included that can be imported to Postman (https://www.getpostman.com/)for testing http requests.
 
 ## NPM dependencies used
 ### Backend
@@ -31,16 +40,14 @@ If you wish to run the backend only, a collection of endpoints are included that
 - helmet -              https://github.com/helmetjs/helmet
 - colors -              https://github.com/Marak/colors.js
 - concurrently -        https://github.com/kimmobrunfeldt/concurrently
-- nodemon -             https://github.com/remy/nodemon  (use only for development)
+- nodemon -             https://github.com/remy/nodemon 
 
 ### Frontend
-- react
-- react-router-dom
-- redux
-- axios
-- uuid
-- bootstrap
-- react-icons
+- react                 https://www.npmjs.com/package/react
+- react-router-dom      https://www.npmjs.com/package/react-router-dom
+- redux                 https://github.com/reduxjs/react-redux
+- axios                 https://www.npmjs.com/package/axios
+- uuid                  https://github.com/uuidjs/uuid
 - redux-thunk
 
 ## Install Dependencies (frontend and backend)
@@ -58,7 +65,7 @@ npm install
 npm run server
 
 # Open a second terminal and run (running this file will 'mock' a robot connecting to the nodejs server)
-node device.js
+npm run device
 
 # Or ...
 
@@ -66,7 +73,7 @@ node device.js
 npm run dev 
 
 # Open a second terminal and run (running this file will 'mock' a robot connecting to the nodejs server)
-node device.js
+npm run device
 
 ```
 
@@ -84,11 +91,6 @@ node seeder -d
 # Import all data
 node seeder -i
 ```
-
-## Resources
-
-Important resources to refer to regarding technologies used in the application:
-
 
 - Version: 1.0.0
 - Author: Seasony
