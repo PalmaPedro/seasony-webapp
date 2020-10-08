@@ -1,9 +1,9 @@
 /**
  * @file This file is the main entry point for the server-side code of the application.
- *       Main responsabilities are:
- *       Server setup.
- *       Connection to mongodb (nosql database).
- *       Handling incoming connections from remote devices.
+ *Main responsabilities are:
+ *Server setup.
+ *Connection to mongodb (nosql database).
+ *Handling incoming connections from remote devices.
  */
 
 const express = require('express');
@@ -23,9 +23,7 @@ const Device = require('./models/Device');
 dotenv.config({ path: './backend/config/config.env' });
 
 /**
- *  This function connects the application to the database by
- *  making the configuration  file (db.js) accessible through
- *  this server.js file
+ * Connect to database
  */
 connectDB();
 
@@ -36,7 +34,7 @@ const devices = require('./routes/devices.js');
 const tasks = require('./routes/tasks.js');
 
 /**
- *
+ * Initialize express server
  */
 const app = express();
 //app.use(morgan('tiny'));  un-comment to have http requests logged 
@@ -46,7 +44,9 @@ const io = socketio(server);
 app.use(helmet());
 
 /**
- *
+ *Use inbuilt express method to recognize Request Objects as json
+ *this is necessary for POST and PUT requests, because we are sending
+ *data to the server and asking to accept or store that data
  */
 app.use(express.json());
 
@@ -105,18 +105,18 @@ io.on('connection', (socket) => {
 });
 
 /**
- * Mount routers
+ * Mount routers. 
  */
 app.use('/api/v1/devices', devices);
 app.use('/api/v1/tasks', tasks);
 
 /**
- *   
+ * 
  */
 app.use(errorHandler);
 
 /**
- *
+ * Fetches the port number from the config .env file
  */
 const PORT = process.env.PORT;
 

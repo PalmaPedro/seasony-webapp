@@ -1,3 +1,7 @@
+/**
+ * This file combines all the components to be loaded from the App.js component
+ *
+ */
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 

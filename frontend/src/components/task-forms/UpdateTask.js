@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import { setAlert } from '../../actions/alertActions';
 
 const UpdateTask = ({ currentTask, updateTask, setAlert, history }) => {
-  // I made it so the form contains the current data by default
   const [formData, setFormData] = useState({
     ...currentTask,
   });

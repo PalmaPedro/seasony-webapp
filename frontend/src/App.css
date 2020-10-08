@@ -252,29 +252,6 @@ ul {
 button {
   font: inherit;
 }
-/*
-.form .social-input {
-  display: flex;
-}
-
-.form .social-input i {
-  padding: 0.5rem;
-  width: 4rem;
-}
-
-*/
-
-/*
-.table th,
-.table td {
-  padding: 1rem;
-  text-align: left;
-}
-
-.table th {
-  background: var(--light-color);
-}
-*/
 
 /* Navbar */
 .navbar {
@@ -304,11 +281,6 @@ button {
 .navbar a:hover {
   color: var(--primary-color);
 }
-
-/*
-.navbar .welcome span {
-  margin-right: 0.6rem;
-}*/
 
 i {
   margin-right: 10px;
@@ -366,87 +338,6 @@ i {
   font-size: 1.5rem;
 }
 
-/*
-.profile-top {
-  grid-area: top;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.profile-top .icons a {
-  color: #fff;
-  margin: 0 0.3rem;
-}
-
-.profile-top .icons a:hover {
-  color: var(--dark-color);
-}*/
-
-/*
-.profile-about {
-  grid-area: about;
-  text-align: center;
-}
-
-.profile-about .skills {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.profile-exp {
-  grid-area: exp;
-}
-
-.profile-edu {
-  grid-area: edu;
-}*/
-
-/*
-.profile-exp h2,
-.profile-edu h2 {
-  margin-bottom: 1rem;
-}
-
-.profile-exp > div,
-.profile-edu > div {
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: #ccc 1px dotted;
-}
-
-.profile-exp > div:last-child,
-.profile-edu > div:last-child {
-  border: 0;
-}
-
-.profile-exp p,
-.profile-edu p {
-  margin: 0.5rem 0;
-}
-
-.profile-github {
-  grid-area: github;
-}
-
-.profile-github .repo {
-  display: flex;
-}
-
-.profile-github .repo > div:first-child {
-  flex: 7;
-  flex-basis: 70%;
-}
-
-.profile-github > div:last-child {
-  flex: 3;
-  flex-basis: 20%;
-}*/
-
 /* Mobile Styles */
 @media (max-width: 700px) {
   .container {
@@ -484,54 +375,4 @@ i {
   .navbar h1 {
     margin-bottom: 1rem;
   }
-
-
-
-/*
-  .navbar .welcome {
-    display: none;
-  }*/
-
-  /* Profiles Page */
-  /*
-  .profile {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .profile ul {
-    display: none;
-  }*/
-
-  /* Profile Page */
-
-/*
-  .profile-grid {
-    grid-template-areas:
-      'top'
-      'about'
-      'exp'
-      'edu'
-      'github';
-  }*/
-
-  /*
-  .profile-about .skills {
-    flex-direction: column;
-  }*/
-
-  /*
-  .dash-buttons a {
-    display: block;
-    width: 100%;
-    margin-bottom: 0.2rem;
-  }
-
-  .post {
-    grid-template-columns: 1fr;
-  }
-  .post a,
-  .post button {
-    padding: 0.3rem 0.4rem;
-  } */
 }

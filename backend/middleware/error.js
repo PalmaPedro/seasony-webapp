@@ -1,6 +1,6 @@
 /**
  * @file  This file will define a piece of middleware which includes errors that might occurr as requests are made to the server.
- *        These errors will be output as needed by the 'controller' functions
+ *These errors will be output as needed by the 'controller' functions
  */
 
 /**
@@ -11,7 +11,6 @@ const ErrorResponse = require('../utils/errorResponse');
 /**
  * @module errorHandler
  * @function
- * @param {Object} err -
  * @param {Object} req - Express request object
  * @param {Object} res - Express response object
  * @param {Function} next - Express next middleware function

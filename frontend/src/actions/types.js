@@ -1,3 +1,8 @@
+/**
+ * This file holds all the type variables, it gives a centralized location
+ * to all types used in the application and by convention they are written in
+ * snake and upper case
+ */
 export const GET_DEVICES = 'GET_DEVICES';
 //export const GET_DEVICE = 'GET_DEVICE';
 export const CREATE_DEVICE = 'CREATE_DEVICE';

@@ -1,3 +1,7 @@
+/**
+ * This file defines the action to be dispatched whenever a component calls it.
+ * An action is a plain object that represents the intention to change state.
+ */
 import axios from 'axios';
 import {
   GET_DEVICES,
@@ -79,9 +83,6 @@ export const deleteDevice = id => async dispatch => {
   };
 }
 
-// assign task to device 
-// todo: needs to pass the taskId aswell in order to bind it with
-// the device
 export const assignTaskToDevice = (id, formData, history) => async dispatch => {
   try {
     const res = await axios.put(`/api/v1/devices/run/${id}`, formData);
@@ -98,7 +99,6 @@ export const assignTaskToDevice = (id, formData, history) => async dispatch => {
     });
   };
 }
-
 
 export const setDevicesLoading = () => {
   return {

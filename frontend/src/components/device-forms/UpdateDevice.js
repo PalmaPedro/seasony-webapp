@@ -6,15 +6,11 @@ import { connect } from 'react-redux';
 import { setAlert } from '../../actions/alertActions';
 
 const UpdateDevice = ({
-  // i added this prop to be able to access the :id part of the route
-  //match: { params },
-  // this prop contains the data for device that has this id
   currentDevice,
   updateDevice,
   setAlert,
   history,
 }) => {
-  // I made it so the form contains the current data by default
   const [formData, setFormData] = useState({
     ...currentDevice,
   });
@@ -44,7 +40,6 @@ const UpdateDevice = ({
                 placeholder="* Device Title"
                 name="title"
                 required
-                // This variable needs to match the form variable ( read more about react controlled input)
                 value={formData.title}
                 onChange={(e) => onChange(e)}
               />
@@ -55,7 +50,6 @@ const UpdateDevice = ({
                 cols="30"
                 rows="5"
                 placeholder="Device Description"
-                // This variable needs to match the form variable ( read more about react controlled input)
                 value={formData.description}
                 onChange={(e) => onChange(e)}
               ></textarea>
@@ -78,9 +72,6 @@ UpdateDevice.propTypes = {
   setAlert: PropTypes.func.isRequired,
 };
 
-// I added the "ownProps" parameter to this function, to have access to the parameters of the Componenent
-// This was done to be able to access the :id from the path, by using the variable match.params.id
-// Then i filter all the devices to return the device that matches the parameter as currentDevice
 const mapStateToProps = (state, ownProps) => {
   return {
     currentDevice: state.device.devices.filter((device) => {

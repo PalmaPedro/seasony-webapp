@@ -1,5 +1,5 @@
 /**
- * @file This file will 'mock' a remote device connecting to the main server. This code or similiar would be
+ * @file This file will 'mock' a remote device connecting to the server. This code or similiar would be
  *  running in a raspberry-pi belonging to a robot.
  *  Communication is established using websockets. 
  *  Important to note that each time a remote device connects to the main server, a new socketID will be generated

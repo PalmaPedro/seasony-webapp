@@ -1,4 +1,8 @@
-import axios from 'axios';
+/**
+ * This file defines the actions to be dispatched whenever the 'tasks' related components calls them.
+ * An action is a plain object that represents the intention to change state
+ */
+import axios from 'axios'; // library used to send HTTP requests to the server
 import {
   GET_TASKS,
   CREATE_TASK,
@@ -8,8 +12,6 @@ import {
   TASKS_LOADING,
   //GET_TASKS_FOR_DEVICE,
 } from './types';
-
-// todo: refactor code to async/await syntax
 
 // getTasks
 export const getTasks = () => async (dispatch) => {
@@ -27,6 +29,7 @@ export const getTasks = () => async (dispatch) => {
     });
   }
 };
+
 //createTask
 export const createTask = (formData, history) => async (dispatch) => {
   try {
@@ -40,7 +43,7 @@ export const createTask = (formData, history) => async (dispatch) => {
       type: CREATE_TASK,
       payload: res.data
     });
-    history.push('/tasks');
+    history.push('/tasks'); // re-directs user to tasks list page
   } catch (err) {
     dispatch({
       type: TASK_ERROR,
@@ -48,6 +51,7 @@ export const createTask = (formData, history) => async (dispatch) => {
     });
   }
 };
+
 // update Task
 export const updateTask = (id, formData, history) => async (dispatch) => {
   try {
@@ -57,7 +61,7 @@ export const updateTask = (id, formData, history) => async (dispatch) => {
       type: UPDATE_TASK,
       payload: res.data,
     });
-    history.push('/tasks');
+    history.push('/tasks');  // re-directs user to tasks list page
   } catch (err) {
     dispatch({
       type: TASK_ERROR,

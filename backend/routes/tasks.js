@@ -1,3 +1,13 @@
+/**
+ * @file This file defines the endpoints for the resource 'tasks'. It accesses the 'controller' methods
+ * which include all the logic to handle each specific enpoint
+ */
+
+/**
+ * Brings in express and enables all routes defined here to be
+ * mounted in the server.js file, which is the main entry point
+ */
+
 const router = require('express').Router({ mergeParams: true });
 
 const {
@@ -20,6 +30,6 @@ router
     .delete(deleteTask);
 
 /**
- * @description Export routes so they become available from the main entry point, the server.js file
+ * Export routes so they become available from the main entry point, the server.js file
  */
 module.exports = router;

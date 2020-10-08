@@ -27,7 +27,7 @@ You can update values in the config.env file, if not, server will run at port 50
 at localhost with the name 'seasonydb' (please make sure mongodb is installed in your machine and create a database
 with a matching name)
 
-If you wish to run the backend only, a collection of endpoints are included that can be imported to Postman (https://www.getpostman.com/)for testing http requests.
+If you wish to run the backend only, a collection of endpoints are included that can be imported to Postman (https://www.getpostman.com/) for testing http requests.
 
 ## NPM dependencies used
 ### Backend
