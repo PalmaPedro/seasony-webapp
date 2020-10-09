@@ -1,3 +1,6 @@
+/**
+ * This file defines a single item of the devices list. 
+ */
 import React from 'react'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -5,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { deleteTask } from '../../actions/taskActions';
 import { setAlert } from '../../actions/alertActions';
 
+// define Component passing the following 'props'
 const TaskItem = ({ deleteTask,
     task: {
         _id,
@@ -21,7 +25,7 @@ const TaskItem = ({ deleteTask,
                 <p>Description: {description}</p>
           </div>
           <div>
-                <Link to={`/update-task/${_id}`} className="btn btn-primary">
+                <Link to={`/update-task/${_id}`} className="btn btn-primary"> 
               Update
             </Link>
           </div>
@@ -37,6 +41,8 @@ const TaskItem = ({ deleteTask,
     );
 };
 
+//propTypes is used to enforce the data type
+//raises a warning if types passed are not the ones expected  
 TaskItem.propTypes = {
   task: PropTypes.object.isRequired,
   deleteTask: PropTypes.func.isRequired,

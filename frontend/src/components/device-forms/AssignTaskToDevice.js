@@ -1,3 +1,8 @@
+/**
+ * This file defines the component 'AssignTaskToDevice'
+ * Connects it to the redux store and
+ * to the reducer
+ */
 import React, { Fragment, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
@@ -26,12 +31,14 @@ const AssignTaskToDevice = ({
 
   const { taskId } = formData;
 
+  // called whenever user inputs data in fields
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
+   // called when 'Assign Task' button is pressed
   const onSubmit = (e) => {
     e.preventDefault();
-    assignTaskToDevice(currentDevice._id, formData, history);
+    assignTaskToDevice(currentDevice._id, formData, history); // action will pass dat
     setAlert('Device assigned with a task!', 'success');
   };
 
@@ -76,6 +83,8 @@ const AssignTaskToDevice = ({
   );
 };
 
+//propTypes is used to enforce the data type(this helps avoid bugs)
+//raises a warning if types passed are not the ones expected 
 AssignTaskToDevice.propTypes = {
   //getTasks: PropTypes.func.isRequired,
   assignTaskToDevice: PropTypes.func.isRequired,

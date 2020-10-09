@@ -1,3 +1,6 @@
+/**
+ * This file defines a single item of the devices list. 
+ */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -5,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { deleteDevice } from '../../actions/deviceActions';
 import { setAlert } from '../../actions/alertActions';
 
+// define Component passing the following 'props'
 const DeviceItem = ({
   deleteDevice,
   device: { _id, title, description, status, socketID },
@@ -41,6 +45,8 @@ const DeviceItem = ({
   );
 };
 
+//propTypes is used to enforce the data type
+//raises a warning if types passed are not the ones expected  
 DeviceItem.propTypes = {
   device: PropTypes.object.isRequired,
   deleteDevice: PropTypes.func.isRequired,

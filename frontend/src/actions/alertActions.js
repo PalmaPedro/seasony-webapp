@@ -6,9 +6,9 @@ import { v4 as uuidv4 } from 'uuid'; // generates a random id number to identify
 import { SET_ALERT, REMOVE_ALERT } from './types';
 
 /**
- * @param {Object} msg  passes a message to te displayed
+ * @param {String} msg  passes a message to te displayed
  * @param {Object} alertType  defines which kind of alert to use (i.e success, danger etc...)
- * @param {Function} timeout  it is set to be displayed for 5sec
+ * @param {*} timeout  it is set to be displayed for 5sec
  */
 export const setAlert = (msg, alertType, timeout = 5000) => dispatch => {
   const id = uuidv4();

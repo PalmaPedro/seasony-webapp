@@ -1,3 +1,8 @@
+/**
+ * This file defines the component which is the container of all
+ * task items. It basically includes the 'create' button and it
+ * is populated with all the task items. Loads all 'TaskItem'
+ */
 import React, { Fragment, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -5,6 +10,7 @@ import TaskItem from './TaskItem';
 import { getTasks } from '../../actions/taskActions';
 //import PropTypes from 'prop-types';
 
+// define Component passing the following 'props'
 const TasksList = ({ getTasks, task: { tasks } }) => {
   useEffect(() => {
     getTasks();

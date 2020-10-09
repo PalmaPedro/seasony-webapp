@@ -1,0 +1,422 @@
+{
+	"info": {
+		"_postman_id": "cb4fd08b-bd2f-408a-a4a0-c7218d9befae",
+		"name": "Seasony API",
+		"description": "Backend API for the Seasony application to manage devices, device data, tasks and users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Devices",
+			"item": [
+				{
+					"name": "Get all devices",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/devices",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"devices"
+							]
+						},
+						"description": "Fetch all devices from database. Includes pagination, filtering, etc"
+					},
+					"response": []
+				},
+				{
+					"name": "Get a single device",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/devices/5d713995b721c3bb38c1f5d0",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"devices",
+								"5d713995b721c3bb38c1f5d0"
+							]
+						},
+						"description": "Get single device by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Create a device",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "Content type JSON",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"_id\": \"5d713995b721c3bb38c1f5d0\",\r\n    \"title\": \"Watney001\",\r\n    \"description\": \"describe Watney-001 responsibilities\",\r\n    \"status\": \"disconnected\",\r\n    \"socketID\": \"\",\r\n    \"task\": [\"\"],\r\n    \"user\": \"5d7a514b5d2c12c7449be047\"\r\n  }\r\n  "
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/devices",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"devices"
+							]
+						},
+						"description": "Add new device to database. Must be admin"
+					},
+					"response": []
+				},
+				{
+					"name": "Update a device",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Describe Watney-003\"\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/devices/5f5c64712ce86c1eec3571279r4r4r34r",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"devices",
+								"5f5c64712ce86c1eec3571279r4r4r34r"
+							]
+						},
+						"description": "Update a single device in database. Must be admin."
+					},
+					"response": []
+				},
+				{
+					"name": "Assign a task to a device",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"description": "JSON Type",
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"_id\": \"5d713995b721c3bb38c1f5d0\",\r\n    \"title\": \"Watney001\",\r\n    \"description\": \"describe Watney-001 responsibilities\",\r\n    \"status\": \"connected\",\r\n    \"socketID\": \"kHF05PxyTezPlmmKAAAA\",\r\n    \"task\": \r\n        {\r\n            \"_id\": \"5d725a4a7b292f5f8ceff782\",\r\n            \"title\": \"Task 001\",\r\n            \"description\": \"Task-001 description here\"\r\n        }\r\n  }\r\n  "
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/devices/run/5d713995b721c3bb38c1f5d0",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"devices",
+								"run",
+								"5d713995b721c3bb38c1f5d0"
+							]
+						},
+						"description": "Assign a task(s) to a device so it can execute it. The server will communicate with the selected device and and give it the selected task(s)"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a device",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/devices/5d713995b721c3bb38c1f5d0",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"devices",
+								"5d713995b721c3bb38c1f5d0"
+							]
+						},
+						"description": "Delete device from database. Must be admin."
+					},
+					"response": []
+				}
+			],
+			"description": "Devices CRUD functionality",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "a6b81480-015e-4a1a-99d8-27f5fa2169f9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "a1befa58-51c8-4871-9d46-b977ac7e6aa2",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "Get all tasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/tasks",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tasks"
+							]
+						},
+						"description": "Fetch all tasks from database"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tasks For Device",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/devices/5d713995b721c3bb38c1f5d0/tasks",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"devices",
+								"5d713995b721c3bb38c1f5d0",
+								"tasks"
+							]
+						},
+						"description": "Get the specific tasks for a device"
+					},
+					"response": []
+				},
+				{
+					"name": "Get single task",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/tasks/5d725a4a7b292f5f8ceff789",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"5d725a4a7b292f5f8ceff789"
+							]
+						},
+						"description": "Fetch a specific task from database"
+					},
+					"response": []
+				},
+				{
+					"name": "Create task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "Content type JSON",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n      \"title\": \"TEST\",\r\n      \"description\": \"TEST\",\r\n      \"dateRun\":\"2020-05-18 00:00:00\",\r\n      \"device\": \"5d713995b721c3bb38c1f5d0\",\r\n      \"user\": \"5d7a514b5d2c12c7449be045\"\r\n  }\r\n  "
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/tasks",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tasks"
+							]
+						},
+						"description": "Add new task to database. Must be admin"
+					},
+					"response": []
+				},
+				{
+					"name": "Update task",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"UPDATED description\"\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/tasks/5f61e75052506738bc3a552c",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"5f61e75052506738bc3a552c"
+							]
+						},
+						"description": "Update a single device in database. Must be admin."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete task",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/tasks/5f61e75052506738bc3a552c",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"5f61e75052506738bc3a552c"
+							]
+						},
+						"description": "Delete device from database. Must be admin."
+					},
+					"response": []
+				}
+			],
+			"description": "Returns a list of tasks that are associated with a given facility and specified robot",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3b8a8b0b-24ec-4266-a9b0-332270ef030a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "c24a2c46-9d87-4397-8b17-97a43202c064",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "2782168b-ec26-4a4d-ba86-4d88b0e2d625",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "23f8fefd-9a83-4755-969a-f4d75385e86d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

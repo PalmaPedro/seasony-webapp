@@ -21,7 +21,7 @@ const Alert = ({ alerts }) =>
     </div>
   ));
 
-//here we use propTypes to enforce the data type(this helps avoid bugs)
+//propTypes is used to enforce the data type(this helps avoid bugs)
 //raises a warning if types passed are not the ones expected  
 Alert.propTypes = {
   alerts: PropTypes.array.isRequired,
