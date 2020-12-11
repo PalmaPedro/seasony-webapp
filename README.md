@@ -92,22 +92,6 @@ node seeder -d
 node seeder -i
 ```
 
-## Useful resources
-### Frontend
-- React          https://reactjs.org/docs/hooks-intro.html
-- Redux          https://redux.js.org/recipes/recipe-index
-- react-redux    https://react-redux.js.org/5.x/introduction/quick-start 
 
-### Backend
-- Express.js                https://expressjs.com/
-- Express Middleware        https://expressjs.com/en/guide/using-middleware.html
-- Express Routing           https://expressjs.com/en/guide/routing.html
-- Express Error Handling    https://expressjs.com/en/guide/error-handling.html
-- Mongoose                  https://mongoosejs.com/
-- Mongoose Schemas/Models   https://mongoosejs.com/docs/models.html
-- Mongoose Middleware       https://mongoosejs.com/docs/middleware.html
-- Mongoose Relationships    https://mongoosejs.com/docs/populate.html
-- Socket.io                 https://socket.io/docs/emit-cheatsheet/
 
 - Version: 1.0.0
-- Author: Seasony
